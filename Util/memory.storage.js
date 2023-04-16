@@ -10,7 +10,7 @@ console.log(store.id); // alerts 'my-store'
 console.log(global.id); // alerts 'global'
 
 
-export const getKeys = () => {
+export const getKeys = (store) => {
 var keys = []
     for (var i=0; i<store.length; i++) {
         var key = store.key(i);
@@ -20,7 +20,7 @@ return keys;
 }
 
 
-export const getValues = () => {
+export const getValues = (store) => {
     var values = []
         for (var i=0; i<store.length; i++) {
             var key =store.key(i);
@@ -30,5 +30,3 @@ export const getValues = () => {
     return values;
     }
 
-
-export default myStorage;
