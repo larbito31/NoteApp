@@ -6,11 +6,9 @@ import noteRoute from './route/noteRoute.js'
 const app = express()
 const port = 3000
 
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// create application/json parser
-var jsonParser = bodyParser.json()
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
