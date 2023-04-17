@@ -1,18 +1,15 @@
 import express from 'express';
-import {getAllnotes} from '../controller/noteController.js';
-import {saveNote} from '../controller/noteController.js';
-import {updateNote} from '../controller/noteController.js';
-import {deleteNote} from '../controller/noteController.js';
+import * as noteController from '../controller/noteController.js';
 
 const router = express.Router();
 
 
 
 // define the home page route
-router.get('/notes', getAllnotes)
-router.post('/notes/save', getAllnotes)
-router.get('/notes/update', getAllnotes)
-router.delete('/notes/delete', getAllnotes)
+router.get('/notes', noteController.getAllnotes)
+router.post('/notes/save', noteController.saveNote)
+router.get('/notes/update', noteController.updateNote)
+router.delete('/notes/delete', noteController.deleteNote)
 
   export default router;
 
