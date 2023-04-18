@@ -40,6 +40,11 @@ export function updateNote(req, res) {
   if (!title || !content  ) {
     return res.status(500).send({error: "Titel and content shouldn't be empty "})}
 
+  var noteItem = memStorage.store.getItem(noteID);
+  if(!noteItem ){
+    return res.status(500).send({error: "NoteItem dosnt exist "})}
+
+
    var noteobj = new Note(noteID, title, content, createdBy, createdOn);
    memStorage.store.setItem(noteID, noteobj);
    return res.status(200).send('Successfully note Updated ' +JSON.stringify(req.body) )
