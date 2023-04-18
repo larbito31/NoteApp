@@ -1,6 +1,6 @@
 import MemoryStorage from 'memorystorage';
 
-const store = new MemoryStorage('note-app');
+export const store = new MemoryStorage('note-app');
 
 // export const store = myStorage;
 // var global = MemoryStorage();
